@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Yoga Studio - Traditional Yoga from Nepal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>🕉️ Himalayan Yoga</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li class="cart-container">
+                    <a href="#cart" id="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Himalayan Yoga Studio</h1>
+                <p>Experience authentic yoga practices rooted in ancient Nepali traditions</p>
+                <div class="hero-buttons">
+                    <button class="btn primary" onclick="showSection('profile')">Get Started</button>
+                    <button class="btn secondary" onclick="showSection('classes')">View Classes</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg" alt="Yoga meditation in mountains">
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="container">
+                <h2>Your Yoga Profile</h2>
+                <p>Tell us about your yoga journey to get personalized recommendations</p>
+                
+                <form id="profile-form" class="profile-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Experience Level:</label>
+                        <select id="experience" required>
+                            <option value="">Select your level</option>
+                            <option value="beginner">Beginner (0-6 months)</option>
+                            <option value="intermediate">Intermediate (6 months - 2 years)</option>
+                            <option value="advanced">Advanced (2+ years)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time:</label>
+                        <select id="preferred-time" required>
+                            <option value="">Select time</option>
+                            <option value="early-morning">Early Morning (5-7 AM)</option>
+                            <option value="morning">Morning (7-10 AM)</option>
+                            <option value="afternoon">Afternoon (2-5 PM)</option>
+                            <option value="evening">Evening (6-8 PM)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Yoga Style Preferences:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="hatha"> Hatha Yoga</label>
+                            <label><input type="checkbox" value="vinyasa"> Vinyasa Flow</label>
+                            <label><input type="checkbox" value="meditation"> Meditation</label>
+                            <label><input type="checkbox" value="pranayama"> Pranayama</label>
+                            <label><input type="checkbox" value="restorative"> Restorative</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals">Primary Goals:</label>
+                        <select id="goals" required>
+                            <option value="">Select your goal</option>
+                            <option value="flexibility">Improve Flexibility</option>
+                            <option value="strength">Build Strength</option>
+                            <option value="stress-relief">Stress Relief</option>
+                            <option value="spiritual">Spiritual Growth</option>
+                            <option value="weight-loss">Weight Management</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn primary">Save Profile & Get Recommendations</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Classes Section -->
+        <section id="classes" class="section">
+            <div class="container">
+                <h2>Our Yoga Classes</h2>
+                <div class="classes-grid" id="classes-grid">
+                    <!-- Classes will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="section">
+            <div class="container">
+                <h2>Recommended for You</h2>
+                <div id="recommendations-content">
+                    <p>Please complete your profile first to see personalized recommendations.</p>
+                    <button class="btn primary" onclick="showSection('profile')">Complete Profile</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+            <div class="container">
+                <h2>Your Cart</h2>
+                <div id="cart-content">
+                    <p>Your cart is empty</p>
+                </div>
+                <div id="checkout-section" style="display: none;">
+                    <h3>Checkout</h3>
+                    <form id="checkout-form" class="checkout-form">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method:</label>
+                            <select id="payment-method" required>
+                                <option value="">Select payment method</option>
+                                <option value="esewa">eSewa</option>
+                                <option value="khalti">Khalti</option>
+                                <option value="bank">Bank Transfer</option>
+                                <option value="cash">Cash Payment</option>
+                            </select>
+                        </div>
+                        <div class="total-amount">
+                            <h3>Total: Rs. <span id="total-amount">0</span></h3>
+                        </div>
+                        <button type="submit" class="btn primary">Complete Payment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>🎉 Booking Confirmed!</h3>
+            <p id="success-message"></p>
+            <button class="btn primary" onclick="closeModal()">Continue</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Himalayan Yoga Studio. Made with ❤️ in Nepal</p>
+            <div class="social-links">
+                <span>📧 info@himalayanyoga.np</span>
+                <span>📱 +977-1-4444444</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
